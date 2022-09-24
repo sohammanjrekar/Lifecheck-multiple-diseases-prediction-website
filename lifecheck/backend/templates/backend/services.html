@@ -1,67 +1,22 @@
-{% extends 'backend/basic.html' %}
-{% load static %}
-    
-{% block title%}{% endblock %}
-{% block css %}
-<style>
-    .col-md-3 {
-        display: inline-block;
-        margin-left: 15px;
-        width: 15vw;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Services</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="CareMed demo project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="styles/services.css">
+<link rel="stylesheet" type="text/css" href="styles/services_responsive.css">
+</head>
+<body>
 
-    .carousel-indicators .active {
-        background-color: rgb(255, 115, 0);
-    }
-
-    .col-md-3 img {
-        width: 5rem;
-       
-    }
-
-    body .carousel-indicator li {
-        background-color: rgb(255, 115, 0);
-    }
-
-    body .carousel-indicators {
-        bottom: -40px;
-        margin-left: 20vw;
-        margin-right: 25vw;
-    }
-
-    .carousel-indicators li {
-        background-color: rgb(255, 115, 0);
-    }
-
-    body .carousel-control-prev-icon,
-    body .carousel-control-next-icon {
-        background-color: rgb(255, 166, 93);
-        height: 5vh;
-    }
-
-    .carousel-control-prev,
-    .carousel-control-next {
-        top: auto;
-        bottom: auto;
-        padding-top:25vh;
-    
-    }
-.non-padding{
-    padding-top: 0;
-    padding-bottom: 0;
-}
-    body .no-padding {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-</style>
-{% endblock %}
-{% block body %}
-{% load static %}
-
-
- <div class="super_container">
+<div class="super_container">
 	
 	<!-- Header -->
 
@@ -161,215 +116,20 @@
 	<!-- Home -->
 
 	<div class="home">
-		<div class="home_slider_container">
-			<!-- Home Slider -->
-			<div class="owl-carousel owl-theme home_slider">
-				
-				<!-- Slider Item -->
-				<div class="owl-item">
-					<div class="home_slider_background" style="background-image:url(images/home_background_1.jpg)"></div>
-					<div class="home_content">
-						<div class="container">
-							<div class="row">
-								<div class="col">
-									<div class="home_content_inner">
-										<div class="home_title"><h1>Medicine made with care</h1></div>
-										<div class="home_text">
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestibulum mauris quis aliquam. Integer accumsan sodales odio, id tempus velit ullamcorper id. Quisque at erat eu.</p>
-										</div>
-										<div class="button home_button">
-											<a href="#">read more</a>
-										</div>
-									</div>
-								</div>
+		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/services.jpg" data-speed="0.8"></div>
+		<div class="home_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="home_content">
+							<div class="home_title"><span>CareMed</span> Services</div>
+							<div class="breadcrumbs">
+								<ul>
+									<li><a href="#">Home</a></li>
+									<li>Services</li>
+								</ul>
 							</div>
 						</div>
-					</div>
-				</div>
-
-				<!-- Slider Item -->
-				<div class="owl-item">
-					<div class="home_slider_background" style="background-image:url(images/home_background_1.jpg)"></div>
-					<div class="home_content">
-						<div class="container">
-							<div class="row">
-								<div class="col">
-									<div class="home_content_inner">
-										<div class="home_title"><h1>Medicine made with care</h1></div>
-										<div class="home_text">
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestibulum mauris quis aliquam. Integer accumsan sodales odio, id tempus velit ullamcorper id. Quisque at erat eu.</p>
-										</div>
-										<div class="button home_button">
-											<a href="#">read more</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Slider Item -->
-				<div class="owl-item">
-					<div class="home_slider_background" style="background-image:url(images/home_background_1.jpg)"></div>
-					<div class="home_content">
-						<div class="container">
-							<div class="row">
-								<div class="col">
-									<div class="home_content_inner">
-										<div class="home_title"><h1>Medicine made with care</h1></div>
-										<div class="home_text">
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus vestibulum mauris quis aliquam. Integer accumsan sodales odio, id tempus velit ullamcorper id. Quisque at erat eu.</p>
-										</div>
-										<div class="button home_button">
-											<a href="#">read more</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-
-			<!-- Slider Progress -->
-			<div class="home_slider_progress"></div>
-		</div>
-	</div>
-
-	<!-- 3 Boxes -->
-
-	<div class="boxes">
-		<div class="container">
-			<div class="row">
-				
-				<!-- Box -->
-				<div class="col-lg-4 box_col">
-					<div class="box working_hours">
-						<div class="box_icon d-flex flex-column align-items-start justify-content-center"><div style="width:29px; height:29px;"><img src="images/alarm-clock.svg" alt=""></div></div>
-						<div class="box_title">Working Hours</div>
-						<div class="working_hours_list">
-							<ul>
-								<li class="d-flex flex-row align-items-center justify-content-start">
-									<div>Monday – Friday</div>
-									<div class="ml-auto">8.00 – 19.00</div>
-								</li>
-								<li class="d-flex flex-row align-items-center justify-content-start">
-									<div>Saturday</div>
-									<div class="ml-auto">9.30 – 17.00</div>
-								</li>
-								<li class="d-flex flex-row align-items-center justify-content-start">
-									<div>Sunday</div>
-									<div class="ml-auto">9.30 – 15.00</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-
-				<!-- Box -->
-				<div class="col-lg-4 box_col">
-					<div class="box box_appointments">
-						<div class="box_icon d-flex flex-column align-items-start justify-content-center"><div style="width: 29px; height:29px;"><img src="images/phone-call.svg" alt=""></div></div>
-						<div class="box_title">Appointments</div>
-						<div class="box_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam cons equat semper sollicitudin.</div>
-					</div>
-				</div>
-
-				<!-- Box -->
-				<div class="col-lg-4 box_col">
-					<div class="box box_emergency">
-						<div class="box_icon d-flex flex-column align-items-start justify-content-center"><div style="width: 37px; height:37px; margin-left:-4px;"><img src="images/bell.svg" alt=""></div></div>
-						<div class="box_title">Emergency Cases</div>
-						<div class="box_phone">+56 273 45678 235</div>
-						<div class="box_emergency_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo.</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-
-	<!-- About -->
-
-	<div class="about">
-		<div class="container">
-			<div class="row row-lg-eq-height">
-				
-				<!-- About Content -->
-				<div class="col-lg-7">
-					<div class="about_content">
-						<div class="section_title"><h2>A great medical team to help your needs</h2></div>
-						<div class="about_text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semper sollicitudin. Aliquam nec dapibus massa. Pellen tesque in luctus ex. Praesent luctus erat sit amet tortor aliquam bibendum. Nulla ut molestie augue, scelerisque consectetur quam. Dolor sit amet, consectetur adipiscing elit. Cura bitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semper sollicitudin. Aliquam nec dapibus massa. Pellentesque in luctus ex.</p>
-						</div>
-						<div class="button about_button">
-							<a href="#">read more</a>
-						</div>
-					</div>
-				</div>
-
-				<!-- About Image -->
-				<div class="col-lg-5">
-					<div class="about_image"><img src="images/about.png" alt=""></div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Departments -->
-
-	<div class="departments">
-		<div class="departments_background parallax-window" data-parallax="scroll" data-image-src="images/departments.jpg" data-speed="0.8"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="section_title section_title_light"><h2>Our Medical Departments</h2></div>
-				</div>
-			</div>
-			<div class="row departments_row row-md-eq-height">
-				
-				<!-- Department -->
-				<div class="col-lg-3 col-md-6 dept_col">
-					<div class="dept">
-						<div class="dept_image"><img src="images/dept_1.jpg" alt=""></div>
-						<div class="dept_content text-center">
-							<div class="dept_title">plastic surgery</div>
-							<div class="dept_subtitle">Dr. James Smith</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Department -->
-				<div class="col-lg-3 col-md-6 dept_col">
-					<div class="dept">
-						<div class="dept_image"><img src="images/dept_2.jpg" alt=""></div>
-						<div class="dept_content text-center">
-							<div class="dept_title">gastroenterology</div>
-							<div class="dept_subtitle">Dr. Gunter Roscoe</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Department -->
-				<div class="col-lg-3 col-md-6 dept_col">
-					<div class="dept">
-						<div class="dept_image"><img src="images/dept_3.jpg" alt=""></div>
-						<div class="dept_content text-center">
-							<div class="dept_title">dentistry</div>
-							<div class="dept_subtitle">Dr. Maria Williams</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Department -->
-				<div class="col-lg-3 col-md-6 dept_col">
-					<div class="dept">
-						<div class="dept_text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semper sollicitudin. Aliquam nec dap ibus massa. Pellen tesque in luctus ex.</p>
-						</div>
-						<div class="button dept_button"><a href="#">read more</a></div>
 					</div>
 				</div>
 			</div>
@@ -468,6 +228,78 @@
 		</div>
 	</div>
 
+	<!-- Features -->
+
+	<div class="features">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="features_container d-flex flex-row flex-wrap align-items-start justify-content-between">
+						
+						<!-- Feature -->
+						<div class="feature">
+							<div class="feature_image"><img src="images/features_1.jpg" alt=""></div>
+							<div class="feature_content">
+								<div class="section_title"><h2>We help you</h2></div>
+								<div class="feature_text">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semp er solli citudin. Aliquam nec dapibus massa.</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Feature -->
+						<div class="feature">
+							<div class="feature_image"><img src="images/features_2.jpg" alt=""></div>
+							<div class="feature_content">
+								<div class="section_title"><h2>Medicine for you</h2></div>
+								<div class="feature_text">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semp er solli citudin. Aliquam nec dapibus massa.</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Feature -->
+						<div class="feature">
+							<div class="feature_image"><img src="images/features_3.jpg" alt=""></div>
+							<div class="feature_content">
+								<div class="section_title"><h2>Amazing technology</h2></div>
+								<div class="feature_text">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semp er solli citudin. Aliquam nec dapibus massa.</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>		
+	</div>
+
+	<!-- Text Section -->
+
+	<div class="text_section">
+		<div class="container">
+			<div class="row">
+				
+				<!-- Text Section Image -->
+				<div class="col-lg-5">
+					<div class="text_section_image"><img src="images/text_section.jpg" alt=""></div>
+				</div>
+
+				<!-- Text Section Content -->
+				<div class="col-lg-7">
+					<div class="text_section_content">
+						<div class="section_title"><h2>A great medical team to help your needs</h2></div>
+						<div class="text_section_text">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semper sollicitudin. Aliquam nec dapibus massa. Pellen tesque in luctus ex. Praesent luctus erat sit amet tortor aliquam bibendum. Nulla ut molestie augue, scelerisque consectetur quam. Dolor sit amet, consectetur adipiscing elit. Cura bitur ante leo, finibus quis est ut, tempor tincidunt ipsum. Nam consequat semper sollicitudin.</p>
+						</div>
+						<div class="button text_section_button"><a href="#">read more</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!-- Call to action -->
 
 	<div class="cta">
@@ -538,7 +370,60 @@
 						</div>
 					</div>
 
+					<!-- Footer - News -->
+					<div class="col-lg-4 footer_col">
+						<div class="footer_news footer_column">
+							<div class="footer_title">Useful Links</div>
+							<ul>
+								<li>
+									<div class="footer_news_title"><a href="news.html">Aliquam ac eleifend metus</a></div>
+									<div class="footer_news_date">March 10, 2018</div>
+								</li>
+								<li>
+									<div class="footer_news_title"><a href="news.html">Donec in libero sit amet mi vulputate</a></div>
+									<div class="footer_news_date">March 10, 2018</div>
+								</li>
+								<li>
+									<div class="footer_news_title"><a href="news.html">Aliquam ac eleifend metus</a></div>
+									<div class="footer_news_date">March 10, 2018</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="copyright_content d-flex flex-lg-row flex-column align-items-lg-center justify-content-start">
+							<p class="text-center text-md-end text-xl-start"> 
+                All Rights Reserved
+              </p>
+							<div class="footer_social ml-lg-auto">
+								<ul>
+									<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+	</footer>
+</div>
 
-{% endblock %}
-{% block js %}
-{% endblock %}
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="plugins/parallax-js-master/parallax.min.js"></script>
+<script src="js/services.js"></script>
+</body>
+</html>

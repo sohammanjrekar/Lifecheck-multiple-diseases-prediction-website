@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,50 +7,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/x-icon" href="\media\backend\images\logo.ico">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
-<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
-<link rel="stylesheet" type="text/css" href="styles/responsive.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'backend/css/bootstrap4/bootstrap.min.css' %}">
+<link href="{% static 'backend/plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'backend/plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'backend/plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'backend/plugins/OwlCarousel2-2.2.1/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'backend/css/main_styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'backend/css/responsive.css' %}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <title>{% block title%} {% endblock %}</title>
+    
 {% block css %} {% endblock %}
   </head>
   <body>
-{% comment %} 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark non-padding">
-      
-  <a class="navbar-brand" href="/backend/"><img src="\media\backend\images\logo.png" alt="" style="height: 10vh;margin-left: 2vw;margin-right: 2vw;">Lifecheck</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/backend/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/backend/about">About Us</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="/backend/contact">Contact Us</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/backend/tracker">Blog</a>
-      </li>
-
-
-    </ul>
-    <form method='get' action='/backend/search/' class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" id="search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav> {% endcomment %}
   {% block body %} {% endblock %}
+
+					<!-- Footer - News -->
+					<div class="col-lg-4 footer_col">
+						<div class="footer_news footer_column">
+							<div class="footer_title">Useful Links</div>
+							<ul>
+								<li>
+									<div class="footer_news_title"><a href="news.html">Aliquam ac eleifend metus</a></div>
+									<div class="footer_news_date">March 10, 2018</div>
+								</li>
+								<li>
+									<div class="footer_news_title"><a href="news.html">Donec in libero sit amet mi vulputate</a></div>
+									<div class="footer_news_date">March 10, 2018</div>
+								</li>
+								<li>
+									<div class="footer_news_title"><a href="news.html">Aliquam ac eleifend metus</a></div>
+									<div class="footer_news_date">March 10, 2018</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="copyright_content d-flex flex-lg-row flex-column align-items-lg-center justify-content-start">
+							<p class="text-center text-md-end text-xl-start"> 
+                All Rights Reserved
+              </p>
+							<div class="footer_social ml-lg-auto">
+								<ul>
+									<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+	</footer>
+</div>
+
+<script src="backend/js/jquery-3.2.1.min.js"></script>
+<script src="backend/css/bootstrap4/popper.js"></script>
+<script src="backend/css/bootstrap4/bootstrap.min.js"></script>
+<script src="backend/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="backend/plugins/easing/easing.js"></script>
+<script src="backend/plugins/parallax-js-master/parallax.min.js"></script>
+<script src="backend/js/custom.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
