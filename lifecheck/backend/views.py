@@ -23,7 +23,8 @@ def contact(request):
         thank = True
     return render(request, 'backend/contact.html', {'thank': thank})
     
+def diabetes(request):
+    return render(request ,'backend/diabetes.html')
 
-   
 
 

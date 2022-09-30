@@ -1,6 +1,4 @@
 from django.db import models
-
-# Create your models here.
 class Patients(models.Model):
     patient_id=models.AutoField
     patient_name=models.CharField(max_length=50)
