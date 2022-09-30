@@ -57,7 +57,9 @@
 
 	<div class="container" style="padding-top: 20vh;width:75vw;background-color:#fdf2d6;padding-bottom: 5vh;box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);">
 		<img src="{% static 'backend/images/27.jpg' %}" alt="" style='width:70vw;margin:auto;'>
-		<form>
+		<form action="/diabetes/result" method="get">
+		
+   		    {{ form }}
 			<h1 class="text-center my-3" style="color:#283290;"> Diabetes Prediction</h1>
 			<div class="form-group row my-3">
 			  <label for="staticEmail" class="col-sm-2 col-form-label my-2">Pregnancies</label>
@@ -108,9 +110,14 @@
 				</div>
 			  </div>
 			  <div class='text-center mt-3'>
-				<button type="submit" class="btn btn-success mx-3">clear</button>
-			  <button type="submit" class="btn btn-success mx-3">Predict</button>
-			  <button type="submit" class="btn btn-success mx-3">exit</button>
+				<button type="clear" class="btn btn-success mx-3">clear</button>
+				<a href="/result"><button type="submit" class="btn btn-success mx-3">Predict</button></a>
+			  <button type="exit" class="btn btn-success mx-3">exit</button>
+			  
+			  </div>
+			  <div class='text-center mt-3'>
+				<h1 class="text-center">{{result}}</h1>
+			  
 			  </div>
 		  </form>
 		
