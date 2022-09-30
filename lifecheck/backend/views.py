@@ -24,7 +24,12 @@ def contact(request):
     return render(request, 'backend/contact.html', {'thank': thank})
     
 def diabetes(request):
-    return render(request ,'backend/diabetes.html')
+    return render(request ,'backend/diseases/diabetes.html')
 
+def parkinsons(request):
+    return render(request ,'backend/diseases/parkinsons.html')
+
+def heart(request):
+    return render(request ,'backend/diseases/heart.html')
 
 
