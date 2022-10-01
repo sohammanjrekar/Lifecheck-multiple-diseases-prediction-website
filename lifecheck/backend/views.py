@@ -1,9 +1,20 @@
 from django.shortcuts import render
-from .models import Patients, Contact
+from .models import Patient,symptom,disease,Contact
 from django import forms
 from django.conf.urls.static import static
 import pandas as pd
 import pickle
+import pdfkit
+from django.http import HttpResponse
+# importing the necessary libraries
+from io import BytesIO
+from django.http import HttpResponse
+from django.template.loader import get_template
+from xhtml2pdf import pisa
+from django.http import HttpResponse
+from django.views.generic import View
+from .process import html_to_pdf 
+
 # Create your views here.
 def index(request):
     return render(request ,'backend/index.html')
@@ -68,4 +79,28 @@ def parkinsons(request):
 def heart(request):
     return render(request ,'backend/diseases/heart.html')
 
+def report(request):
+    return render(request ,'backend/report/report.html')   
+  
+class GeneratePdf(View):
+     def get(self, request, *args, **kwargs):
+        pdf = html_to_pdf('C:\\Users\\mrsoh\\Desktop\\Lifecheck-multiple-diseases-prediction-website\\lifecheck\\backend\\templates\\backend\\report\\report.html')
+        # rendering the template
+        return HttpResponse(pdf, content_type='application/pdf')
+#     pdf = pdfkit.from_file('C:\\Users\\mrsoh\\Desktop\\Lifecheck-multiple-diseases-prediction-website\\lifecheck\\backend\\templates\\backend\\report\\report.html', 'report.pdf')
+    
+#     options = {
+#     'page-size': 'Letter',
+#     'margin-top': '0.75in',
+#     'margin-right': '0.75in',
+#     'margin-bottom': '0.75in',
+#     'margin-left': '0.75in',
+#     'encoding': "UTF-8",
+#     'no-outline': None
+# }
 
+# pdfkit.from_url('http://google.com', 'out.pdf', options=options)
+#     response = HttpResponse(pdf,content_type='application/pdf')
+#     response['Content-Disposition'] = 'attachment; filename="reprt.pdf"'
+#     return response
+   
