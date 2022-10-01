@@ -49,6 +49,7 @@ class Patient(models.Model):
     join_date=models.DateField(auto_now_add=True)
     image=models.ImageField(upload_to="backend/images",default="")
     
+    
     def __str__(self):
         return self.patient_name
 
