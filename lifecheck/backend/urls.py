@@ -12,5 +12,6 @@ urlpatterns = [
     path('parkinsons/',views.parkinsons,name="parkinsons"),
     path('diabetes/result_diabetes',views.result_diabetes,name="result_diabetes"),
     path('diabetes/report',views.report,name="report"),
-    path('pdf/', GeneratePdf.as_view()), 
+    path('pdf/', GeneratePdf.as_view()),
+    
 ]
