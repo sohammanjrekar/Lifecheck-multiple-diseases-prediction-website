@@ -7,6 +7,7 @@ from django.contrib.postgres.fields import ArrayField
     
 class disease(models.Model):
     disease_name = models.CharField(max_length = 100)
+    disease_id= models.AutoField(primary_key=True)
     no_of_symp = models.IntegerField()
     symptom_name = ArrayField(models.CharField(max_length=200))
     
@@ -14,17 +15,22 @@ class disease(models.Model):
         return self.disease_name
 
 class Contact(models.Model):
+    msg_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
     email = models.CharField(max_length=70, default="")
     phone = models.CharField(max_length=70, default="")
     desc = models.CharField(max_length=150, default="")
+    
     def __str__(self):
         return self.name
     
 class symptom(models.Model):
     symp_name  = models.CharField(max_length = 100)
     disease = models.OneToOneField(disease, on_delete=models.CASCADE, primary_key=True)
-    symptom_id = models.AutoField
+    
+    
+    def __str__(self):
+        return self.symp_name
     
 class Patient(models.Model):
     GENDER_CHOICES = (
@@ -32,7 +38,6 @@ class Patient(models.Model):
     ('2', 'Female'),
     ('3', 'Others'),
     )
-    patient_id=models.AutoField
     patient_name=models.CharField(max_length=50)
     dob = models.DateField()
     disease = models.OneToOneField(disease, on_delete=models.CASCADE, primary_key=True)
