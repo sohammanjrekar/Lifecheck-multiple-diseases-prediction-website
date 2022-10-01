@@ -57,32 +57,32 @@
 
 	<div class="container" style="padding-top: 20vh;width:75vw;background-color:#fdf2d6;padding-bottom: 5vh;box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);">
 		<img src="{% static 'backend/images/27.jpg' %}" alt="" style='width:70vw;margin:auto;'>
-		<form action="/diabetes/result" method="get">
+		<form action="result_diabetes" method="POST">
 		
-   		    {{ form }}
+			{% csrf_token %}
 			<h1 class="text-center my-3" style="color:#283290;"> Diabetes Prediction</h1>
 			<div class="form-group row my-3">
 			  <label for="staticEmail" class="col-sm-2 col-form-label my-2">Pregnancies</label>
 			  <div class="col-sm-10">
-				<input type="text" name="v1" class="form-control my-2 mx-2" id="inputPassword" placeholder="Pregnancies">
+				<input type="number" step="0.01" name="v1" class="form-control my-2 mx-2" id="inputPassword" placeholder="Pregnancies">
 			  </div>
 			</div>
 			<div class="form-group row">
 			  <label for="inputPassword" class="col-sm-2 col-form-label my-2">Glucose</label>
 			  <div class="col-sm-10">
-				<input type="text" name="v2" class="form-control my-2 mx-2" id="inputPassword" placeholder="Glucose">
+				<input type="number" step="0.01" name="v2" class="form-control my-2 mx-2" id="inputPassword" placeholder="Glucose">
 			  </div>
 			</div>
 			<div class="form-group row">
 				<label for="inputPassword" class="col-sm-2 col-form-label my-2">Blood Pressure</label>
 				<div class="col-sm-10">
-					<input type="text" name="v3" class="form-control my-2 mx-2" id="inputPassword" placeholder="Blood Pressure">
+					<input type="number" step="0.01" name="v3" class="form-control my-2 mx-2" id="inputPassword" placeholder="Blood Pressure">
 				</div>
 			  </div>
 			  <div class="form-group row">
 				<label for="inputPassword" class="col-sm-2 col-form-label my-2">Skin Thickness</label>
 				<div class="col-sm-10">
-					<input type="text" name="v4" class="form-control my-2 mx-2" id="inputPassword" placeholder="Skin Thickness">
+					<input type="number" step="0.01" name="v4" class="form-control my-2 mx-2" id="inputPassword" placeholder="Skin Thickness">
 				</div>
 			  </div>
 			  <div class="form-group row">
@@ -94,25 +94,25 @@
 			  <div class="form-group row">
 				<label for="inputPassword" class="col-sm-2 col-form-label my-2">BMI</label>
 				<div class="col-sm-10">
-					<input type="text" name="v6" class="form-control my-2 mx-2" id="inputPassword" placeholder="BMI">
+					<input type="number" step="0.01" name="v6" class="form-control my-2 mx-2" id="inputPassword" placeholder="BMI">
 				</div>
 			  </div>
 			  <div class="form-group row">
 				<label for="inputPassword" class="col-sm-2 col-form-label my-2">Diabetes Pedigree Function</label>
 				<div class="col-sm-10">
-					<input type="text" name="v7" class="form-control my-2 mx-2" id="inputPassword" placeholder="Diabetes Pedigree Function">
+					<input type="number" step="0.01" name="v7" class="form-control my-2 mx-2" id="inputPassword" placeholder="Diabetes Pedigree Function">
 				</div>
 			  </div>
 			  <div class="form-group row">
 				<label for="inputPassword" class="col-sm-2 col-form-label my-2">Age</label>
 				<div class="col-sm-10">
-				  <input type="text" name="v8" class="form-control my-2 mx-2" id="inputPassword" placeholder="Age">
+				  <input type="number" step="0.01" name="v8" class="form-control my-2 mx-2" id="inputPassword" placeholder="Age">
 				</div>
 			  </div>
 			  <div class='text-center mt-3'>
 				<button type="clear" class="btn btn-success mx-3">clear</button>
-				<a href="/result"><button type="submit" class="btn btn-success mx-3">Predict</button></a>
-			  <button type="exit" class="btn btn-success mx-3">exit</button>
+		<button type="submit" value="submit" class="btn btn-success mx-3">Predict</button>
+		<button type="exit" class="btn btn-success mx-3">exit</button>
 			  
 			  </div>
 			  <div class='text-center mt-3'>

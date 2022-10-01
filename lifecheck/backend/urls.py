@@ -9,5 +9,5 @@ urlpatterns = [
     path('diabetes/',views.diabetes,name="diabetes"),
     path('heart/',views.heart,name="heart"),
     path('parkinsons/',views.parkinsons,name="parkinsons"),
-    path('diabetes/result',views.result1,name="result1"),
+    path('diabetes/result_diabetes',views.result_diabetes,name="result_diabetes"),
 ]
