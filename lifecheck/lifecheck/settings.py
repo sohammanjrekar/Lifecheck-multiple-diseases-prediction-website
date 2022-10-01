@@ -73,7 +73,7 @@ DATABASES = {
 
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-        'NAME': 'lifecheck',
+        'NAME': 'Lifecheck',
 
         'USER': 'postgres',
 
