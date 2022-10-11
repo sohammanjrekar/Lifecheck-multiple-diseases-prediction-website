@@ -1,128 +1,302 @@
 {% extends 'backend/basic.html' %}
-{% load static %}
-    
-{% block title%}my{% endblock %}
+ {% load static %} 
+{% block title%}my{% endblock %} 
 {% block css %}
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <style>
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+  integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+  crossorigin="anonymous"
+/>
+<style>
      .form-control{
-		width:35vw;
-	 }
-	 .col-sm-10{
-		padding-left: 10vw;
-	 }
-	 button {
-		border-radius: 4px;
-		background-color: #5ca1e1;
-		border: none;
-		color: #fff;
-		text-align: center;
-		font-size: 32px;
-		padding: 16px;
-		width: 220px;
-		transition: all 0.5s;
-		cursor: pointer;
-		margin: 36px;
-		box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
-	  }
-	  
-	  button{
-		cursor: pointer;
-		display: inline-block;
-		position: relative;
-		transition: 0.5s;
-	  }
-	  
-	  button:after {
-		content: '»';
-		position: absolute;
-		opacity: 0;  
-		top: 10px;
-		right: -20px;
-		transition: 0.5s;
-	  }
-	  
-	  button:hover{
-		padding-right: 24px;
-		padding-left:8px;
-	  }
-	  
-	  button:hover:after {-
-		opacity: 1;
-		right: 10px;
-	  }
-    </style>
-{% endblock %}
-{% block body %}
+  width:35vw;
+  }
+  .col-sm-10{
+  padding-left: 10vw;
+  }
+  button {
+  border-radius: 4px;
+  background-color: #5ca1e1;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-size: 32px;
+  padding: 16px;
+  width: 220px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 36px;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+   }
 
-	<div class="container" style="padding-top: 20vh;width:75vw;background-color:#fdf2d6;padding-bottom: 5vh;box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);">
-		<img src="{% static 'backend/images/27.jpg' %}" alt="" style='width:70vw;margin:auto;'>
-		<form action="result_diabetes" method="POST">
+   button{
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+   }
+
+   button:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 10px;
+  right: -20px;
+  transition: 0.5s;
+   }
+
+   button:hover{
+  padding-right: 24px;
+  padding-left:8px;
+   }
+
+   button:hover:after {-
+  opacity: 1;
+  right: 10px;
+   }
+</style>
+{% endblock %}
+ {% block body %}
+
+<div
+  class="container"
+  style="
+    padding-top: 20vh;
+    width: 75vw;
+    background-color: #fdf2d6;
+    padding-bottom: 5vh;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
+  "
+>
+  <img
+    src="{% static 'backend/images/27.jpg' %}"
+    alt=""
+    style="width: 70vw; margin: auto"
+  />
+
+  <form action="result_heart" method="POST">
+    {% csrf_token %}
+    <h1 class="text-center my-3" style="color: #283290">Heart Diseases Prediction</h1>
+    <div class="form-group row my-3">
+      <label for="staticEmail" class="col-sm-2 col-form-label my-2"
+        >Age</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="number"
+          step="0.01"
+          name="h1"
+          class="form-control my-2 mx-2"
+          id="inputPassword"
+          placeholder="Age"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword" class="col-sm-2 col-form-label my-2"
+        >Sex</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="number"
+          step="0.01"
+          name="h2"
+          class="form-control my-2 mx-2"
+          id="sex"
+          placeholder="sex"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword" class="col-sm-2 col-form-label my-2"
+        >Chest_pain</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="number"
+          step="0.01"
+          name="h3"
+          class="form-control my-2 mx-2"
+          id="Chest_pain"
+          placeholder="Chest_pain"
+        />
+      </div>
+    </div>
+	<div class="form-group row">
+		<label for="inputPassword" class="col-sm-2 col-form-label my-2"
+		  >Resting_blood_pressure</label
+		>
+		<div class="col-sm-10">
+		  <input
+			type="number"
+			step="0.01"
+			name="h4"
+			class="form-control my-2 mx-2"
+			id="Resting_blood_pressure"
+			placeholder="Resting_blood_pressure"
+		  />
+		</div>
+    <div class="form-group row">
+      <label for="inputPassword" class="col-sm-2 col-form-label my-2"
+        >Cholesterol</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="number"
+          step="0.01"
+          name="h5"
+          class="form-control my-2 mx-2"
+          id="Cholesterol"
+          placeholder="Cholesterol"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword" class="col-sm-2 col-form-label my-2"
+        >Fasting_blood_sugar</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="text"
+          name="h6"
+          class="form-control my-2 mx-2"
+          id="Fasting_blood_sugar"
+          placeholder="Fasting_blood_sugar"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword" class="col-sm-2 col-form-label my-2"
+        >ECG_results</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="number"
+          step="0.01"
+          name="h7"
+          class="form-control my-2 mx-2"
+          id="ECG_results"
+          placeholder="ECG_results"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword" class="col-sm-2 col-form-label my-2"
+        >Maximum_heart_rate </label
+      >
+      <div class="col-sm-10">
+        <input
+          type="number"
+          step="0.01"
+          name="h8"
+          class="form-control my-2 mx-2"
+          id="Maximum_heart_rate "
+          placeholder="Maximum_heart_rate "
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword" class="col-sm-2 col-form-label my-2"
+        >Exercise_induced_angina</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="number"
+          step="0.01"
+          name="h9"
+          class="form-control my-2 mx-2"
+          id="Exercise_induced_angina"
+          placeholder="Exercise_induced_angina"
+        />
+      </div>
+    </div>
+
+
+
+
+	<div class="form-group row">
+		<label for="inputPassword" class="col-sm-2 col-form-label my-2"
+		  >ST_depression</label
+		>
+		<div class="col-sm-10">
+		  <input
+			type="number"
+			step="0.01"
+			name="h10"
+			class="form-control my-2 mx-2"
+			id="ST_depression"
+			placeholder="ST_depression"
+		  />
+		</div>
+	  </div>
+	  <div class="form-group row">
+		<label for="inputPassword" class="col-sm-2 col-form-label my-2"
+		  >ST_slope</label
+		>
+		<div class="col-sm-10">
+		  <input
+			type="number"
+			step="0.01"
+			name="h11"
+			class="form-control my-2 mx-2"
+			id="ST_slope"
+			placeholder="ST_slope"
+		  />
+		</div>
+	  </div>
+	  <div class="form-group row">
+		<label for="inputPassword" class="col-sm-2 col-form-label my-2"
+		  >Major_vessels</label
+		>
+		<div class="col-sm-10">
+		  <input
+			type="number"
+			step="0.01"
+			name="h12"
+			class="form-control my-2 mx-2"
+			id="Major_vessels"
+			placeholder="Major_vessels"
+		  />
+		</div>
+	  </div>
+	  <div class="form-group row">
+		<label for="inputPassword" class="col-sm-2 col-form-label my-2"
+		  >Thalassemia_types</label
+		>
+		<div class="col-sm-10">
+		  <input
+			type="number"
+			step="0.01"
+			name="h13"
+			class="form-control my-2 mx-2"
+			id="Thalassemia_types"
+			placeholder="Thalassemia_types"
+		  />
+		</div>
+	  </div>
+    <div class="text-center mt-3">
+      <button type="clear" class="btn btn-success mx-3">clear</button>
+      <button type="submit" value="submit" class="btn btn-success mx-3">
+        Predict
+      </button>
+      <button type="exit" class="btn btn-success mx-3">exit</button>
+    </div>
+	
+    <div class="text-center mt-3">
+      <h1 class="text-center">{{result}}</h1>
+    </div>
+  </form>
+  
+  </div>
+  <div class="text-center mt-3">
 		
-			{% csrf_token %}
-			<h1 class="text-center my-3" style="color:#283290;"> Diabetes Prediction</h1>
-			<div class="form-group row my-3">
-			  <label for="staticEmail" class="col-sm-2 col-form-label my-2">Pregnancies</label>
-			  <div class="col-sm-10">
-				<input type="number" step="0.01" name="v1" class="form-control my-2 mx-2" id="inputPassword" placeholder="Pregnancies">
-			  </div>
-			</div>
-			<div class="form-group row">
-			  <label for="inputPassword" class="col-sm-2 col-form-label my-2">Glucose</label>
-			  <div class="col-sm-10">
-				<input type="number" step="0.01" name="v2" class="form-control my-2 mx-2" id="inputPassword" placeholder="Glucose">
-			  </div>
-			</div>
-			<div class="form-group row">
-				<label for="inputPassword" class="col-sm-2 col-form-label my-2">Blood Pressure</label>
-				<div class="col-sm-10">
-					<input type="number" step="0.01" name="v3" class="form-control my-2 mx-2" id="inputPassword" placeholder="Blood Pressure">
-				</div>
-			  </div>
-			  <div class="form-group row">
-				<label for="inputPassword" class="col-sm-2 col-form-label my-2">Skin Thickness</label>
-				<div class="col-sm-10">
-					<input type="number" step="0.01" name="v4" class="form-control my-2 mx-2" id="inputPassword" placeholder="Skin Thickness">
-				</div>
-			  </div>
-			  <div class="form-group row">
-				<label for="inputPassword" class="col-sm-2 col-form-label my-2">Insulin</label>
-				<div class="col-sm-10">
-					<input type="text" name="v5" class="form-control my-2 mx-2" id="inputPassword" placeholder="Insulin">
-				</div>
-			  </div>
-			  <div class="form-group row">
-				<label for="inputPassword" class="col-sm-2 col-form-label my-2">BMI</label>
-				<div class="col-sm-10">
-					<input type="number" step="0.01" name="v6" class="form-control my-2 mx-2" id="inputPassword" placeholder="BMI">
-				</div>
-			  </div>
-			  <div class="form-group row">
-				<label for="inputPassword" class="col-sm-2 col-form-label my-2">Diabetes Pedigree Function</label>
-				<div class="col-sm-10">
-					<input type="number" step="0.01" name="v7" class="form-control my-2 mx-2" id="inputPassword" placeholder="Diabetes Pedigree Function">
-				</div>
-			  </div>
-			  <div class="form-group row">
-				<label for="inputPassword" class="col-sm-2 col-form-label my-2">Age</label>
-				<div class="col-sm-10">
-				  <input type="number" step="0.01" name="v8" class="form-control my-2 mx-2" id="inputPassword" placeholder="Age">
-				</div>
-			  </div>
-			  <div class='text-center mt-3'>
-				<button type="clear" class="btn btn-success mx-3">clear</button>
-		<button type="submit" value="submit" class="btn btn-success mx-3">Predict</button>
-		<button type="exit" class="btn btn-success mx-3">exit</button>
-			  
-			  </div>
-			  <div class='text-center mt-3'>
-				<h1 class="text-center">{{result}}</h1>
-			  
-			  </div>
-		  </form>
-		
+	<a href="/result_heart/report"><button class="btn btn-success mx-3">
+		Download
+		</button></a>
+
+	</div>
 </div>
 
-{% endblock %}
-{% block js %}
-{% endblock %}
+{% endblock %} 
+{% block js %} {% endblock %}

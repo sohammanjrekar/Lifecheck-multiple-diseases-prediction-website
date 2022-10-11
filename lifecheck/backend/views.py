@@ -14,6 +14,8 @@ from xhtml2pdf import pisa
 from django.http import HttpResponse
 from django.views.generic import View
 from .process import html_to_pdf 
+import sklearn
+
 
 # Create your views here.
 def index(request):
@@ -65,28 +67,141 @@ def result_diabetes(request):
             model = pickle.load(f)
             result = model.predict([[v1,v2,v3,v4,v5,v6,v7,v8]])
             print(result)
-            ans=""
+            dia_ans=""
             if(result == [1]):
-                ans = "Positive"
+                dia_ans = "Positive"
             
-            else:ans  = "Negative"
-            return render(request, 'backend/diseases/diabetes.html', {'result':ans})
+            else:dia_ans  = "Negative"
+            return render(request, 'backend/diseases/diabetes.html', {'result':dia_ans})
 
 
 def parkinsons(request):
     return render(request ,'backend/diseases/parkinsons.html')
 
+
+def result_parkinsons(request):
+    if request.method == 'POST':
+        p1 = float(request.POST['p1'])
+        p2 = float(request.POST['p2'])
+        p3 = float(request.POST['p3'])
+        p4 = float(request.POST['p4'])
+        p5 = float(request.POST['p5'])
+        p6 =float( request.POST['p6'])
+        p7 =float( request.POST['p7'])
+        p8 =float( request.POST['p8'])
+        p9 = float(request.POST['p9'])
+        p10 = float(request.POST['p10'])
+        p11 = float(request.POST['p11'])
+        p12 = float(request.POST['p12'])
+        p13= float(request.POST['p13'])
+        p14=float( request.POST['p14'])
+        p15=float( request.POST['p15'])
+        p16=float( request.POST['p16'])
+        p17 = float(request.POST['p17'])
+        p18 = float(request.POST['p18'])
+        p19 = float(request.POST['p19'])
+        p20= float(request.POST['p20'])
+        p21= float(request.POST['p21'])
+        p22=float( request.POST['p22'])
+    
+        
+        # model = pickle.load(open('lifecheck/backend/static/backend/models/diabetes','rb'))
+        with open('C:\\Users\\mrsoh\\Desktop\\Lifecheck-multiple-diseases-prediction-website\\models\parkinsons.sav', 'rb') as f:
+            model = pickle.load(f)
+            result = model.predict([[p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22]])
+            print(result)
+            park_ans=""
+            if(result == [1]):
+                park_ans = "Positive"
+            
+            else:park_ans  = "Negative"
+            return render(request, 'backend/diseases/parkinsons.html', {'result':park_ans})
+
+
+
+
+
+
+
+
+
 def heart(request):
     return render(request ,'backend/diseases/heart.html')
 
-def report(request):
-    return render(request ,'backend/report/report.html')   
+def result_heart(request):
+    if request.method == 'POST':
+        h1 = float(request.POST['h1'])
+        h2 = float(request.POST['h2'])
+        h3 = float(request.POST['h3'])
+        h4 = float(request.POST['h4'])
+        h5 = float(request.POST['h5'])
+        h6 =float( request.POST['h6'])
+        h7 =float( request.POST['h7'])
+        h8 =float( request.POST['h8'])
+        h9 = float(request.POST['h9'])
+        h10 = float(request.POST['h10'])
+        h11 = float(request.POST['h11'])
+        h12 = float(request.POST['h12'])
+        h13= float(request.POST['h13'])
+
+    
+        
+        # model = pickle.load(open('lifecheck/backend/static/backend/models/diabetes','rb'))
+        with open('C:\\Users\\mrsoh\\Desktop\\Lifecheck-multiple-diseases-prediction-website\\models\heart.sav', 'rb') as f:
+
+            model = pickle.load(f)
+            result = model.predict([[h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,h11,h12,h13]])
+            print(result)
+            heart_ans=""
+            if(result == [1]):
+                heart_ans = "Positive"
+            
+            else:heart_ans  = "Negative"
+            return render(request, 'backend/diseases/heart.html', {'result':heart_ans})
+            
+
+
+
+# def report(request):
+#     return render(request ,'backend/report/report.html')   
   
-class GeneratePdf(View):
+class diabetes_report(View):
      def get(self, request, *args, **kwargs):
-        pdf = html_to_pdf('C:\\Users\\mrsoh\\Desktop\\Lifecheck-multiple-diseases-prediction-website\\lifecheck\\backend\\templates\\backend\\report\\report.html')
+        pdf = html_to_pdf
+        ('C:\\Users\\mrsoh\\Desktop\\Lifecheck-multiple-diseases-prediction-website\\lifecheck\\backend\\templates\\backend\\report\\diabetes_report.html')
         # rendering the template
         return HttpResponse(pdf, content_type='application/pdf')
+    
+    
+class heart_report(View):
+     def get(self, request, *args, **kwargs):
+        pdf = html_to_pdf('C:\\Users\\mrsoh\\Desktop\\Lifecheck-multiple-diseases-prediction-website\\lifecheck\\backend\\templates\\backend\\report\\heart_report.html')
+        # rendering the template
+        return HttpResponse(pdf, content_type='application/pdf')
+    
+class parkinsons_report(View):
+     def get(self, request, *args, **kwargs):
+        pdf = html_to_pdf('C:\\Users\\mrsoh\\Desktop\\Lifecheck-multiple-diseases-prediction-website\\lifecheck\\backend\\templates\\backend\\report\\parkinsons_report.html')
+        # rendering the template
+        return HttpResponse(pdf, content_type='application/pdf')
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 #     pdf = pdfkit.from_file('C:\\Users\\mrsoh\\Desktop\\Lifecheck-multiple-diseases-prediction-website\\lifecheck\\backend\\templates\\backend\\report\\report.html', 'report.pdf')
     
 #     options = {
